@@ -10,3 +10,6 @@ class CoffeeShop:
 
 	def sell_drink(self, drink_to_sell):
 		self.till += drink_to_sell.price
+
+	def age_limit(self, check_age):
+		self.age_limit <= 16
