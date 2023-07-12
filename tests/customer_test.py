@@ -7,7 +7,10 @@ class Testcustomer(unittest.TestCase):
         self.tammy = Customer("Tammy", 50)
         self.water = Drink("Spring Water", 10)
 
-    # def test_customer_has_name(self):
+    def test_customer_has_name(self):
+        self.assertEqual("Tammy", self.tammy.name)
+    def test_customer_has_wallet(self):
+        self.assertEqual(50, self.tammy.wallet)
 
 
     def test_customer_can_buy_drink(self):

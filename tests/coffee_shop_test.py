@@ -9,6 +9,7 @@ class TestCoffeeShop(unittest.TestCase):
         self.coffee  = Drink("Black coffee", 3.95)
         self.tea = Drink("Earl Grey", 2.00)
         self.customer = Customer("Tammy", 50)
+        self.water = Drink("Spring Water", 10)
     
 
         self.drinks = [self.coffee, self.tea]
@@ -37,4 +38,8 @@ class TestCoffeeShop(unittest.TestCase):
         self.coffee_shop.change_till_by_amount(-10)
         self.assertEqual(90, self.coffee_shop.till)
 
-
+    def  drinks_can_be_sold(self):
+        self.coffee_shop.sell_drink(self.coffee)
+        self.customer.buy_drink(self.coffee)
+        self.assertEqual(50, self.customer.wallet)
+        self.assertEqual(113.95, self.coffee_shop.till)
